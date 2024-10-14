@@ -1,0 +1,70 @@
+/* src/components/Header.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Ajustado para evitar desbordamientos */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px; /* Reducido para evitar desbordamientos */
+}
+
+.header-button {
+  padding: 8px 16px; /* Ajustado para mejor distribución */
+  background-color: #ff6347; /* Color de fondo de los botones */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  transition: background-color 0.3s, transform 0.3s;
+  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+}
+
+.header-button:hover {
+  background-color: #ff826e; /* Color al pasar el cursor */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+}
+
+/* Responsividad */
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px; /* Ajuste adicional para pantallas pequeñas */
+  }
+
+  .navigation {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .header-button {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0; /* Ajuste para botones en pantallas pequeñas */
+  }
+}
