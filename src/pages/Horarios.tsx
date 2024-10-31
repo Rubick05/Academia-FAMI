@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 type Clase = {
@@ -8,104 +7,71 @@ type Clase = {
     estilo: string;
     reglas: string;
     nivel: string;
-  };
+    videoUrl: string;
+};
 
-  const horariosData: { [dia: string]: Clase[] } = {
+const horariosData: { [dia: string]: Clase[] } = {
     Lunes: [
-      { horario: '10:00 - 11:00', profesor: 'Profesor A', salon: 'Salón 1', estilo: 'Ballet', reglas: 'Puntualidad y respeto', nivel: 'Básico' },
-      { horario: '14:00 - 15:00', profesor: 'Profesor B', salon: 'Salón 2', estilo: 'Jazz', reglas: 'Traer botella de agua', nivel: 'Intermedio' },
+        { horario: '10:00 - 11:00', profesor: 'Profesor A', salon: 'Salón 1', estilo: 'Ballet', reglas: 'Puntualidad y respeto', nivel: 'Básico', videoUrl: '/videos/ballet.mp4' },
+        { horario: '14:00 - 15:00', profesor: 'Profesor B', salon: 'Salón 2', estilo: 'Jazz', reglas: 'Traer botella de agua', nivel: 'Intermedio', videoUrl: '/videos/jazz.mp4' },
     ],
-    Martes: [
-      { horario: '09:00 - 10:00', profesor: 'Profesor C', salon: 'Salón 3', estilo: 'Hip-hop', reglas: 'Calzado adecuado', nivel: 'Avanzado' },
-      { horario: '15:00 - 16:00', profesor: 'Profesor D', salon: 'Salón 4', estilo: 'Bachata', reglas: 'Puntualidad y respeto', nivel: 'Básico' },
-    ],
-    // Añade más días con sus horarios correspondientes
-  };
+    // Añade más días y horarios...
+};
 
 function Horarios() {
     const [diaSeleccionado, setDiaSeleccionado] = useState<string>('Lunes');
     const [detalleClase, setDetalleClase] = useState<string>('');
-  
+    const [videoUrl, setVideoUrl] = useState<string>('');
+
     const handleDiaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      setDiaSeleccionado(e.target.value);
-      setDetalleClase(''); // Limpiar detalles al cambiar de día
+        setDiaSeleccionado(e.target.value);
+        setDetalleClase('');
+        setVideoUrl('');
     };
-  
+
     const handleHorarioClick = (horario: Clase) => {
-      setDetalleClase(
-        `Horario: ${horario.horario}\nProfesor: ${horario.profesor}\nSalón: ${horario.salon}\nEstilo: ${horario.estilo}\nNivel: ${horario.nivel}\nReglas: ${horario.reglas}`
-      );
+        setDetalleClase(
+            `Horario: ${horario.horario}\nProfesor: ${horario.profesor}\nSalón: ${horario.salon}\nEstilo: ${horario.estilo}\nNivel: ${horario.nivel}\nReglas: ${horario.reglas}`
+        );
+        setVideoUrl(horario.videoUrl); // Establecer el video correspondiente
     };
-  
-    // Función para obtener la abreviatura del nivel
-    const getNivelAbreviado = (nivel: string) => {
-      switch (nivel) {
-        case 'Básico':
-          return 'Bas';
-        case 'Intermedio':
-          return 'Int';
-        case 'Avanzado':
-          return 'Ava';
-        default:
-          return nivel;
-      }
-    };
-  
+
     return (
-      <div style={{ padding: '20px' }}>
-        <h2>Horarios de Clases</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', marginBottom: '20px' }}>
-          <label htmlFor="diaSelect">Selecciona un día:</label>
-          <select id="diaSelect" value={diaSeleccionado} onChange={handleDiaChange} style={{ margin: '10px 0', padding: '5px' }}>
-            {Object.keys(horariosData).map((dia) => (
-              <option key={dia} value={dia}>
-                {dia}
-              </option>
-            ))}
-          </select>
+        <div className="horarios-container">
+            <h2 className="horarios-header">Horarios de Clases</h2>
+            <div className="select-container">
+                <label htmlFor="diaSelect">Selecciona un día:</label>
+                <select id="diaSelect" value={diaSeleccionado} onChange={handleDiaChange}>
+                    {Object.keys(horariosData).map((dia) => (
+                        <option key={dia} value={dia}>
+                            {dia}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="content-wrapper">
+                <div className="horarios-list">
+                    {horariosData[diaSeleccionado].map((horario, index) => (
+                        <button key={index} onClick={() => handleHorarioClick(horario)} className="horario-button">
+                            <strong>{horario.horario}</strong> - {horario.estilo}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="detalle-container">
+                    <h3 className="detalle-header">Detalles de la Clase</h3>
+                    <textarea value={detalleClase} readOnly className="detalle-textarea" />
+
+                    {videoUrl && (
+                        <div className="video-container">
+                            <video controls src={videoUrl}></video>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
-  
-        <div style={{ display: 'flex' }}>
-          <div style={{ marginRight: '20px', width: '250px' }}>
-            {horariosData[diaSeleccionado].map((horario, index) => (
-              <button
-                key={index}
-                onClick={() => handleHorarioClick(horario)}
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  marginBottom: '10px',
-                  padding: '15px',
-                  backgroundColor: '#007bff',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                }}
-              >
-                <strong>{horario.horario}</strong> - {horario.estilo} ({getNivelAbreviado(horario.nivel)})
-              </button>
-            ))}
-          </div>
-          <div>
-            <h3>Detalles de la Clase</h3>
-            <textarea
-              value={detalleClase}
-              readOnly
-              style={{
-                width: '300px',
-                height: '150px',
-                padding: '10px',
-                border: '1px solid #ccc',
-                borderRadius: '5px',
-              }}
-            />
-          </div>
-        </div>
-      </div>
     );
-  }
-  
-  export default Horarios;
-  
+}
+
+export default Horarios;
