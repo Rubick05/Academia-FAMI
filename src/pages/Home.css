@@ -1,30 +1,18 @@
 /* src/pages/Home.css */
 
-/* Fondo de la página */
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #1B1B2F; /* Fondo oscuro */
-  color: #EAEAEA; /* Texto claro para contraste */
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Sección principal */
+/* Fondo degradado solo en la sección de Home */
 .home-section {
   padding: 20px;
   text-align: center;
   max-width: 80%;
-  background-color: #EAEAEA; /* Fondo claro */
-  color: #1B1B2F; /* Texto oscuro */
+  background: linear-gradient(to bottom, #440500, #B55000, #A20D09, #000154); /* Fondo degradado */
+  color: #EAEAEA; /* Texto claro */
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  min-height: 100vh; /* Asegura que la sección ocupe todo el alto de la pantalla */
 }
 
-/* Galería de fotos */
+/* Resto del estilo de la página */
 .gallery {
   display: flex;
   flex-wrap: wrap;

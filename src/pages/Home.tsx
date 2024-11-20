@@ -1,4 +1,4 @@
-// src/pages/Home.tsx
+/// src/pages/Home.tsx
 import React from 'react';
 import './Home.css';
 import banner1 from '../assets/images/banner1.png';
