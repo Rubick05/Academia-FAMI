@@ -1,9 +1,9 @@
-// src/pages/Home.tsx
+/// src/pages/Home.tsx
 import React from 'react';
 import './Home.css';
-import banner1 from '../assets/images/banner1.jpg';
-import banner2 from '../assets/images/banner2.jpg';
-import banner3 from '../assets/images/banner3.jpg';
+import banner1 from '../assets/images/banner1.png';
+import banner2 from '../assets/images/banner2.png';
+import banner3 from '../assets/images/banner3.png';
 // Asegúrate de tener estas imágenes en la ruta correcta
 
 const Home: React.FC = () => {
