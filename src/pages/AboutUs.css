@@ -1,44 +1,89 @@
-/* src/pages/AboutUs.css */
+/* Estilos para la sección "Sobre Nosotros" */
+.about-section {
+  margin: 0;
+  padding: 60px 50px; /* Espaciado superior e inferior */
+  background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 70%); /* Fondo degradado */
+  font-family: 'Poppins', sans-serif;
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: white;
+  position: relative;
+}
 
-.about-us-section {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-image {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-  }
-  
-  .about-content p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #555;
-  }
-  
-  /* Responsividad */
-  @media (min-width: 768px) {
-    .about-content {
-      flex-direction: row;
-      text-align: left;
-    }
-  
-    .about-image {
-      width: 50%;
-    }
-  
-    .about-content p {
-      width: 50%;
-    }
-  }
-  
+/* Estilo para el título de "Sobre Nosotros" */
+.about-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+  text-transform: uppercase; /* Título en mayúsculas */
+  text-align: left; /* Alinea el título a la izquierda */
+}
+
+/* Estilo para las descripciones de la sección */
+.about-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 20px;
+  text-align: justify; /* Alineación justificada */
+}
+
+/* Estilo para el botón "Conoce Más" */
+.about-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 55px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.about-btn:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+/* Estilo para la galería de fotos */
+.about-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.about-photo-item {
+  width: 30%;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil alrededor de las imágenes */
+}
+
+/* Estilo para la sección adicional de texto (si es necesario) */
+.subtext-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.subtext {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center; /* Centra el texto */
+}

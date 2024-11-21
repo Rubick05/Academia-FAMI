@@ -1,63 +1,95 @@
-/* src/pages/Inscribete.css */
-
+/* Estilos para la sección "Inscríbete" */
 .inscribete-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background-color: #1B1B2F; /* Fondo oscuro */
-  color: #EAEAEA; /* Texto claro */
+  margin: 0;
+  padding: 60px 50px; /* Espaciado superior e inferior */
+  background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 70%); /* Fondo degradado */
+  font-family: 'Poppins', sans-serif;
+  text-align: left; /* Alinea el texto a la izquierda */
+  color: white;
+  position: relative;
 }
 
+/* Estilo para el título de "Inscríbete" */
+.inscribete-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Título en mayúsculas */
+}
+
+/* Estilo para la descripción de la sección */
+.inscribete-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: white;
+  margin-bottom: 40px;
+  text-align: justify; /* Alineación justificada */
+}
+
+/* Estilo para el formulario */
 .inscribete-form {
-  max-width: 500px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: #EAEAEA; /* Fondo claro del formulario */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  color: #1B1B2F; /* Texto oscuro */
+  margin-bottom: 25px;
 }
 
-input, select {
-  padding: 8px;
+.form-group label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
   font-size: 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  color: #1B1B2F; /* Texto oscuro */
-  background-color: #f5f5f5; /* Fondo suave */
+  background-color: #fff;
+  color: #333;
+  margin-top: 5px;
 }
 
-input:focus, select:focus {
+.form-group input:focus, .form-group select:focus {
   outline: none;
-  border-color: #E94560; /* Color de acento en focus */
+  border-color: #B55000; /* Bordes con color destacado */
 }
 
 .error {
-  color: #E94560; /* Acento coral para mensajes de error */
-  font-size: 0.875rem;
-  margin-top: 4px;
+  font-size: 14px;
+  color: #FF6347; /* Color rojo para los errores */
+  margin-top: 5px;
 }
 
+/* Estilo para el botón de enviar */
 .submit-button {
-  padding: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 55px;
   font-size: 16px;
-  background-color: #E94560; /* Acento coral */
-  color: #EAEAEA; /* Texto claro */
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-  background-color: #d7374d; /* Variación del acento para hover */
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }

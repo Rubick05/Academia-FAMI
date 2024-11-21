@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Horarios.css';
 
 type Clase = {
     horario: string;
@@ -7,7 +8,7 @@ type Clase = {
     estilo: string;
     reglas: string;
     nivel: string;
-    videoUrl: string; // Cambiado a no ser opcional
+    videoUrl: string;
 };
 
 const horariosData: { [dia: string]: Clase[] } = {
@@ -33,7 +34,7 @@ function Horarios() {
     const handleDiaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setDiaSeleccionado(e.target.value);
         setDetalleClase('');
-        setVideoUrl(''); // Limpiar video al cambiar de día
+        setVideoUrl('');
     };
 
     const handleHorarioClick = (horario: Clase) => {
@@ -44,36 +45,25 @@ function Horarios() {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div className="horarios-container">
             <h2>Horarios de Clases</h2>
-            <div style={{ display: 'flex', gap: '20px' }}>
+            <div className="horarios-content">
                 {/* Columna de selección de días y horarios */}
-                <div>
+                <div className="horarios-select">
                     <label htmlFor="diaSelect">Selecciona un día:</label>
-                    <select id="diaSelect" value={diaSeleccionado} onChange={handleDiaChange} style={{ margin: '10px 0', padding: '5px' }}>
+                    <select id="diaSelect" value={diaSeleccionado} onChange={handleDiaChange}>
                         {Object.keys(horariosData).map((dia) => (
                             <option key={dia} value={dia}>
                                 {dia}
                             </option>
                         ))}
                     </select>
-                    <div style={{ marginTop: '10px' }}>
+                    <div>
                         {horariosData[diaSeleccionado].map((horario, index) => (
                             <button
                                 key={index}
                                 onClick={() => handleHorarioClick(horario)}
-                                style={{
-                                    display: 'block',
-                                    width: '250px',
-                                    marginBottom: '10px',
-                                    padding: '15px',
-                                    backgroundColor: '#4A90E2',
-                                    color: '#fff',
-                                    border: 'none',
-                                    borderRadius: '5px',
-                                    cursor: 'pointer',
-                                    textAlign: 'left',
-                                }}
+                                className="horario-button"
                             >
                                 <strong>{horario.horario}</strong> - {horario.estilo} ({horario.nivel})
                             </button>
@@ -82,34 +72,25 @@ function Horarios() {
                 </div>
 
                 {/* Columna de video y detalles de la clase */}
-                <div style={{ flex: '1' }}>
+                <div className="horarios-details">
                     {videoUrl && (
-                        <div style={{ marginBottom: '15px' }}>
+                        <div className="video-container">
                             <h3>Video de Estilo: {horariosData[diaSeleccionado].find(h => h.videoUrl === videoUrl)?.estilo}</h3>
                             <iframe
-                                width="100%"
-                                height="200"
                                 src={videoUrl}
                                 title="Video de clase"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
-                                style={{ borderRadius: '8px' }}
+                                className="video-iframe"
                             ></iframe>
                         </div>
                     )}
-                    <div>
+                    <div className="details-container">
                         <h3>Detalles de la Clase</h3>
                         <textarea
                             value={detalleClase}
                             readOnly
-                            style={{
-                                width: '100%',
-                                height: '150px',
-                                padding: '10px',
-                                border: '1px solid #ccc',
-                                borderRadius: '5px',
-                                resize: 'none',
-                            }}
+                            className="details-textarea"
                         />
                     </div>
                 </div>
