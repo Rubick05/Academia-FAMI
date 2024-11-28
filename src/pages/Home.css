@@ -3,7 +3,7 @@
 /* Aplica el fondo degradado al cuerpo de la página */
 body {
   margin: 0;
-  background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 70%); /* Fondo degradado */
+  background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 50%, #000154 100%); /* Fondo degradado */
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center; /* Centra horizontalmente */
@@ -261,6 +261,7 @@ body {
 .overlay-title {
   font-family: 'Poppins', sans-serif;
   font-size: 40px;
+  color: white;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -295,4 +296,122 @@ body {
 .horario-btn:hover {
   background-color: #ffffff; /* Color más oscuro al pasar el mouse */
   color: black;
+}
+
+
+
+
+
+
+
+/* Sección de Profesores */
+.professors-section {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  justify-content: center; /* Se asegura de que el texto y las imágenes estén separados */
+  gap: 30px; /* Espacio entre las imágenes y el texto */
+  margin-top: 100px; /* Reduce el margen superior de toda la sección */
+  flex-direction: row-reverse; /* Alinea el texto a la derecha y las imágenes a la izquierda */
+}
+
+/* Contenedor del texto */
+.professors-text {
+  font-family: 'Poppins', sans-serif;
+  text-align: right; /* Alinea el texto a la derecha */
+  max-width: 475px; /* Establece un ancho máximo más estrecho */
+  width: 100%; /* Asegura que el contenedor use todo el espacio disponible hasta el máximo */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 10px; /* Añade un poco de espacio interno */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Título de los profesores */
+.professors-text h2 {
+  font-size: 40px; /* Aumenta el tamaño del título */
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-right: 0; /* Elimina el margen derecho que se puede estar aplicando */
+}
+
+/* Descripción de los profesores */
+.professors-text p {
+  font-size: 15px;
+  color: #ffffff;
+  line-height: 1.866; /* Espaciado entre líneas para mejorar la legibilidad */
+  margin-bottom: 50px; /* Reduce el margen inferior para evitar que quede tan separado */
+  max-width: 100%; /* Asegura que el texto no tenga un límite máximo tan estrecho */
+  
+}
+
+/* Contenedor de las imágenes de los profesores */
+.professor-image-container {
+  display: flex;
+  gap: 20px; /* Espacio entre las imágenes */
+  align-items: center; /* Alinea las imágenes verticalmente */
+  flex: 1;
+  margin-left: 50px; /* Ajusta el margen izquierdo para un pequeño espacio */
+}
+
+/* Estilo de las imágenes de los profesores */
+.professor-image {
+  width: 301px;
+  height: 501px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover en las imágenes */
+.professor-image:hover {
+  transform: scale(1.05);
+}
+
+/* Flechas de navegación */
+.arrow {
+  font-size: 3rem;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Ajusta las flechas para moverlas 1 píxel */
+.arrow.left {
+  left: -40px;
+}
+
+.arrow.right {
+  right: -51px;
+}
+
+/* Aseguramos que las flechas estén posicionadas en el contenedor de las imágenes */
+.professors-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructores-btn {
+  display: inline-block;
+  margin-top: 15 px;
+  margin-left: 200px;
+  padding: 15px 55px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  
+}
+
+/* Cambiar el color del botón cuando se pasa el mouse sobre él */
+.instructores-btn:hover {
+  background-color: #ffffff; /* Color más oscuro al pasar el mouse */
+  color: rgb(0, 0, 0);
 }
