@@ -1,34 +1,60 @@
-// src/pages/AboutUs.tsx
-import React from 'react';
+import React, { useEffect } from 'react'; 
 import './AboutUs.css';
+import Fundador from '../assets/images/fundador.png';
 
 const AboutUs: React.FC = () => {
-  return (
-    <section id="about-us" className="about-section">
-      <h1 className="about-title">Sobre Nosotros</h1>
-      <p className="about-description">
-        En la Academia de Danza FA-MI, nos apasiona la danza y nos dedicamos a enseñar una variedad de estilos para todas las edades y niveles. 
-        Nuestro equipo de instructores profesionales está comprometido con tu crecimiento y desarrollo artístico. Creemos en la importancia de
-        crear un ambiente donde la creatividad, el esfuerzo y la pasión se encuentren para formar bailarines excepcionales.
-      </p>
-      <p className="about-description">
-        Únete a nuestra comunidad y descubre cómo la danza puede transformar tu vida. Ofrecemos clases personalizadas, eventos especiales y un
-        ambiente inclusivo donde todos son bienvenidos.
-      </p>
-      <a href="#learn-more" className="about-btn">Conoce Más</a>
+  useEffect(() => {
+    // Aplica la clase de fondo rojo al cuerpo al montar el componente
+    document.body.classList.add('about-us-body');
+    return () => {
+      // Limpia la clase al desmontar
+      document.body.classList.remove('about-us-body');
+    };
+  }, []);
 
-      <div className="about-gallery">
-        <div className="about-photo-item">
-          <img src="photo1.jpg" alt="Clase de Danza 1" className="about-photo" />
-        </div>
-        <div className="about-photo-item">
-          <img src="photo2.jpg" alt="Clase de Danza 2" className="about-photo" />
-        </div>
-        <div className="about-photo-item">
-          <img src="photo3.jpg" alt="Evento Especial" className="about-photo" />
+  return (
+    <div>
+      {/* Sección principal con la imagen */}
+      <div className="fondo-Cochabamba">
+        <div className="hero-section">
+          <h1>BIENVENIDO A</h1>
+          <h2 className="academy-name">FAMI DANCE ACADEMY</h2>
+          <p className="overlay-description">
+            UN LUGAR VIBRANTE EN COCHABAMBA DONDE EL AMOR POR EL BAILE Y LA
+            CREATIVIDAD SE ENCUENTRAN PARA HACERTE BRILLAR EN CADA CLASE.
+          </p>
         </div>
       </div>
-    </section>
+      {/* Nueva sección "El principio" que aparece más abajo */}
+      <div className="info-fundador">
+        <h2 className="info-title">
+          Carlos Mendoza
+        </h2>
+        <h3 className="description-fundador">
+          Fundador
+        </h3>
+        <p className="info-content">
+        Carlos es un apasionado del movimiento y la expresión urbana. Con más de 10 años de experiencia en el mundo del hip hop y el breakdance, ha competido en campeonatos nacionales y ha perfeccionado su técnica en distintos estilos de danza urbana. Su enfoque como instructor es no solo enseñar los pasos, sino también transmitir la cultura y la creatividad que definen estos géneros. 
+          <br /><br />
+          En Fami Dance Academy, Carlos inspira a sus estudiantes a liberar su estilo único y a ganar confianza en cada movimiento.
+        </p>
+        <img
+          src={Fundador}
+          alt="Imagen decorativa"
+          className="fundadorImage"
+        />
+      
+      </div>
+      {/* Nueva sección "El principio" que aparece más abajo */}
+      <div className="principio-section">
+        <h3 className="principio-title">El principio</h3>
+        <p className="principio-text">
+          Hace unos siete años, Carlos Mendoza siguió su sueño en Cochabamba y, con
+          mucha determinación, dio vida a su visión. Su pasión y dedicación rápidamente
+          lo convirtieron en una figura reconocida en la comunidad de la danza en Bolivia.
+        </p>
+      </div>
+    </div>
   );
 };
 

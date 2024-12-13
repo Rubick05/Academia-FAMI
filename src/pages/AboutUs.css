@@ -1,89 +1,152 @@
-/* Estilos para la sección "Sobre Nosotros" */
-.about-section {
-  margin: 0;
-  padding: 60px 50px; /* Espaciado superior e inferior */
-  background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 70%); /* Fondo degradado */
-  font-family: 'Poppins', sans-serif;
-  text-align: left; /* Alinea el texto a la izquierda */
-  color: white;
+/* Estilo del cuerpo para fondo rojo (si lo necesitas en todo el componente) */
+.about-us-body {
+  background-color: #fefefe;
+}
+
+/* Fondo de la sección principal con la imagen */
+.fondo-Cochabamba {
+  margin-top: -80px;
   position: relative;
-}
-
-/* Estilo para el título de "Sobre Nosotros" */
-.about-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 30px;
-  text-transform: uppercase; /* Título en mayúsculas */
-  text-align: left; /* Alinea el título a la izquierda */
-}
-
-/* Estilo para las descripciones de la sección */
-.about-description {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.8;
-  color: white;
-  margin-bottom: 20px;
-  text-align: justify; /* Alineación justificada */
-}
-
-/* Estilo para el botón "Conoce Más" */
-.about-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 55px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  background-color: black;
-  border: none;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.about-btn:hover {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-}
-
-/* Estilo para la galería de fotos */
-.about-gallery {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
-.about-photo-item {
-  width: 30%;
-}
-
-.about-photo {
   width: 100%;
-  height: auto;
-  border-radius: 10px; /* Bordes redondeados para las imágenes */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil alrededor de las imágenes */
-}
-
-/* Estilo para la sección adicional de texto (si es necesario) */
-.subtext-container {
+  height: 120vh; /* Hace que ocupe toda la altura de la pantalla */
+  background-image: url('../assets/images/imagen-Cocha.png'); /* Usa la imagen de fondo importada */
+  background-size: cover; /* Asegura que la imagen cubra el contenedor */
+  background-position: center; /* Centra la imagen */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 80px;
+  justify-content: center; /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente */
+  color: white; /* Hace que el texto sea blanco */
+  text-align: center; /* Centra el texto */
 }
 
-.subtext {
+
+/* Opcional: estilos para el título y el párrafo */
+.hero-section h1 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 32px;
-  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.hero-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 80px;
+  margin: 0;
   color: white;
+}
+
+.overlay-description{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 20px auto 0;
+  line-height: 1.5;
+}
+
+
+
+
+.info-fundador {
+  margin-top: 100px; /* Espacio hacia abajo para separar el texto del resto de la página */
+  padding: 40px 20px; /* Padding alrededor del texto */
+  width: 50%; /* Hace que el contenedor ocupe el 50% del ancho de la pantalla */
+  margin-left: 0; /* Elimina el margen izquierdo */
+  margin-right: 0; /* Elimina el margen derecho */
+  text-align: left; /* Alinea el texto a la izquierda */
+  box-sizing: border-box; /* Asegura que el padding se aplique correctamente */
+  padding-left: 140px; /* Añade espacio a la izquierda, ajusta el valor en píxeles */
+}
+
+/* Estilo para el título */
+.info-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Peso semibold para el título */
+  font-size: 40px;
+  color: white;
+  margin-bottom: 30px; /* Espacio entre el título y el contenido */
+  text-transform: uppercase; /* Para que el título esté en mayúsculas */
+}
+
+/* Estilo para el subtitulo */
+.description-fundador {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Peso semibold para el título */
+  font-size: 40px;
+  color: white;
+  margin-bottom: 20px; /* Espacio entre el título y el contenido */
+  text-transform: uppercase; /* Para que el título esté en mayúsculas */
+}
+
+
+/* Estilo para el contenido */
+.info-content {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Peso normal para el contenido */
+  font-size: 15px;
+  color: white;
+  line-height: 2; /* Espacio entre líneas */
+  text-align: justify; /* Alinea el contenido de manera justificada */
+}
+
+/* Contenedor del texto */
+.text-left-container {
+  position: absolute;
+  left: 0; /* Ajusta a la izquierda de la pantalla */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Asegura que el texto quede centrado verticalmente */
+  width: 100%; /* Hace que ocupe todo el ancho de la pantalla */
+  padding-left: 20px; /* Opcional: agrega un margen a la izquierda si lo deseas */
+  box-sizing: border-box; /* Asegura que el padding se aplique correctamente */
+}
+
+.fundadorImage {
+  position: absolute;
+  top: 825px; /* Coordenada Y */
+  left: 750px; /* Coordenada X */
+  width: 475px; /* Ajusta el tamaño de la imagen a 300px de ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para la nueva sección "El principio" */
+.principio-section {
+  
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px; /* Asegura que haya un espacio entre la sección principal y la nueva */
+}
+
+/* Estilo para el título de la nueva sección */
+.principio-title {
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 20px;
-  text-align: center; /* Centra el texto */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Peso semibold para el título */
+  font-size: 40px;
+  color: white;
+  margin-bottom: 30px; /* Espacio entre el título y el contenido */
+  text-transform: uppercase; /* Para que el título esté en mayúsculas */
+}
+
+/* Estilo para el texto de la nueva sección */
+.principio-text {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Peso normal para el contenido */
+  color: white;
+  line-height: 2; /* Espacio entre líneas */
 }
