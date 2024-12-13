@@ -30,7 +30,6 @@ const Header: React.FC = () => {
         <Link to="/" className="header-button">Home</Link>
         <Link to="/about-us" className="header-button">About Us</Link>
         <Link to="/inscribete" className="header-button">Inscríbete</Link>
-        <Link to="/instructores" className="header-button">Instructores</Link>
         <Link to="/horarios" className="header-button">Horarios</Link>
         <Link to="/clasesprivadas" className="header-button">clases Privadas</Link>
         <Link to="/loginregister" className="header-button">Ingresa</Link>
