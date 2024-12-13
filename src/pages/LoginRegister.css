@@ -1,0 +1,149 @@
+/* Estilos generales para el formulario */
+.login-register-section {
+    margin: 0;
+    padding: 60px 50px;
+    background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 70%); /* Fondo degradado */
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    color: white;
+    position: relative;
+}
+
+/* Estilo para el título de la sección */
+.login-register-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Estilo para la descripción */
+.login-register-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: white;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+/* Estilo para la transición entre formularios */
+.form-container {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.form-container.login {
+    transform: translateX(0);
+}
+
+.form-container.register {
+    transform: translateX(100%);
+}
+
+/* Estilo para el formulario */
+.login-register-form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Estilo para las etiquetas de los campos */
+.form-group label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilo para los campos de texto y select */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Estilo para los campos cuando están en foco */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #8B1E3F;
+}
+
+/* Estilo para los mensajes de error */
+.error {
+    font-size: 14px;
+    color: #FF6347;
+    margin-top: 5px;
+}
+
+/* Estilo para el botón de enviar */
+.submit-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 55px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efecto hover del botón */
+.submit-button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Estilo para el botón de alternar entre formularios */
+.toggle-button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #8B1E3F;
+    color: white;
+}
+.toggle-form:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.toggle-form {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s; /* Transición para color y fondo */
+}

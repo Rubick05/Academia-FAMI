@@ -1,46 +1,298 @@
 /* src/pages/Home.css */
 
-.home-section {
-    padding: 20px;
-    text-align: center;
-  }
+/* Aplica el fondo degradado al cuerpo de la página */
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #440500 0%, #B55000 23%, #A20D09 70%); /* Fondo degradado */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  position: relative;
+  min-height: 100vh; /* Asegura que el cuerpo tenga al menos el 100% de la altura de la ventana */
+  overflow-x: hidden; /* Evita que se muestre un scroll horizontal */
+}
+
+/* Contenedor para organizar los elementos de arriba hacia abajo */
+.home-container {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: flex-start; /* Alinea los elementos a la izquierda */
+  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  position: absolute; /* Posiciona el texto de manera absoluta */
+  left: 175px; /* Mueve el contenedor hacia la derecha */
+  margin-right: 50px;
+  top: 180px; /* Ajusta el espacio superior para centrar el texto verticalmente */
+}
+
+/* Estilo común para ambos, h2 y h3 */
+.home-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.highlight {
+  font-family: 'Poppins', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+/* Estilo para el botón "ÚNETE AHORA" */
+.join-now-btn {
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 150px;
+  padding: 15px 55px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
   
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 20px;
-  }
+}
+
+/* Cambiar el color del botón cuando se pasa el mouse sobre él */
+.join-now-btn:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.home-image {
+  position: absolute;
+  top: -40px; /* Coordenada Y */
+  left: 450px; /* Coordenada X */
+  width: 750px; /* Ajusta el tamaño de la imagen a 300px de ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para el contenedor del texto adicional */
+.subtext-container {
+  display: flex;
+  justify-content: center; /* Centra el texto horizontalmente */
+  padding-top: 750px; /* Le da un espacio de 500px desde la parte superior de la página */
+  text-align: center; /* Centra el texto dentro del div */
+}
+
+/* Estilo para el texto adicional */
+.subtext {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: white;
+  max-width: 700px; /* Opcional: Limita el ancho máximo del texto */
+}
+
+/* Contenedor de texto adicional */
+.subtext-container {
+  text-align: center; /* Centra el texto */
+  margin-top: 100px;  /* Ajusta el espacio superior si es necesario */
+}
+
+/* Estilo para el texto adicional */
+.subtext {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Semi-negrita */
+  font-size: 25px;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px; /* Espacio entre el texto y el botón */
+}
+
+/* Contenedor de texto adicional */
+.subtext-container {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén apilados verticalmente */
+  align-items: center;    /* Centra el contenido */
+  margin-top: 80px;      /* Espacio entre la parte superior y el texto */
+  text-align: center;     /* Centra el texto dentro del contenedor */
+}
+
+/* Estilo para el texto adicional */
+.subtext {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Semi-negrita */
+  font-size: 32px;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px; /* Espacio entre el texto y el botón */
+}
+
+/* Estilo para el botón "INSCRÍBETE" */
+.inscribete-btn {
+  display: block; /* Hace que el botón se muestre como un bloque */
+  margin-top: 20px; /* Espacio entre el texto y el botón */
+  padding: 15px 55px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: #000000; /* Color de fondo, puedes cambiarlo */
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  width: 250px; /* Puedes ajustar el tamaño del botón */
+  text-align: center; /* Asegura que el texto del botón esté centrado */
+}
+
+/* Cambiar el color del botón cuando se pasa el mouse sobre él */
+.inscribete-btn:hover {
+  background-color: #ffffff; /* Color más oscuro al pasar el mouse */
+  color: rgb(0, 0, 0);
+}
+
+
+/* 2DO CONTENEDOR */
+
+/* Contenedor para el título y contenido */
+.info-container {
+  margin-top: 50px; /* Espacio hacia abajo para separar el texto del resto de la página */
+  padding: 40px 20px; /* Padding alrededor del texto */
+  width: 50%; /* Hace que el contenedor ocupe el 50% del ancho de la pantalla */
+  margin-left: 0; /* Elimina el margen izquierdo */
+  margin-right: 0; /* Elimina el margen derecho */
+  text-align: left; /* Alinea el texto a la izquierda */
+  box-sizing: border-box; /* Asegura que el padding se aplique correctamente */
+  padding-left: 140px; /* Añade espacio a la izquierda, ajusta el valor en píxeles */
+}
+
+/* Estilo para el título */
+.info-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Peso semibold para el título */
+  font-size: 40px;
+  color: white;
+  margin-bottom: 30px; /* Espacio entre el título y el contenido */
+  text-transform: uppercase; /* Para que el título esté en mayúsculas */
+}
+
+/* Estilo para el contenido */
+.info-content {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Peso normal para el contenido */
+  font-size: 15px;
+  color: white;
+  line-height: 2; /* Espacio entre líneas */
+  text-align: justify; /* Alinea el contenido de manera justificada */
+}
+
+/* Contenedor del texto */
+.text-left-container {
+  position: absolute;
+  left: 0; /* Ajusta a la izquierda de la pantalla */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Asegura que el texto quede centrado verticalmente */
+  width: 100%; /* Hace que ocupe todo el ancho de la pantalla */
+  padding-left: 20px; /* Opcional: agrega un margen a la izquierda si lo deseas */
+  box-sizing: border-box; /* Asegura que el padding se aplique correctamente */
+}
+
+.home-image2 {
+  position: absolute;
+  top: 1100px; /* Coordenada Y */
+  left: 700px; /* Coordenada X */
+  width: 600px; /* Ajusta el tamaño de la imagen a 300px de ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para el botón "ÚNETE AHORA" */
+.more-about-us {
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 120px;
+  padding: 15px 55px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
   
-  .photo-item {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+}
+
+/* Cambiar el color del botón cuando se pasa el mouse sobre él */
+.more-about-us:hover {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);;
+}
+
+/* Imagen de fondo y Texto */
+
+/* Estilo para la sección con la imagen de fondo */
+.background-section {
+  margin-top: 50px;
+  position: relative;
+  width: 100%;
+  height: 120vh; /* Hace que ocupe toda la altura de la pantalla */
+  background-image: url('../assets/images/imagen-Fondo.png'); /* Usa la imagen de fondo importada */
+  background-size: cover; /* Asegura que la imagen cubra el contenedor */
+  background-position: center; /* Centra la imagen */
+  display: flex;
+  justify-content: center; /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente */
+  color: white; /* Hace que el texto sea blanco */
+  text-align: center; /* Centra el texto */
+}
+.overlay-text {
   
-  .photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-  }
+  margin-top: -25px; /* Espacio hacia abajo para separar el texto del resto de la página */
+  padding: 100px 100px; /* Padding alrededor del texto */
+  width: 50%; /* Hace que el contenedor ocupe el 50% del ancho de la pantalla */
+  margin-left: center; /* Elimina el margen izquierdo */
+  margin-right: center; /* Elimina el margen derecho */
+  text-align: center; /* Alinea el texto a la izquierda */
+  box-sizing: border-box; /* Asegura que el padding se aplique correctamente */
   
-  .photo-item:hover .photo {
-    transform: scale(1.05);
-  }
+}
+.overlay-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.overlay-description {
+  margin-top: 70px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
   
-  .photo-number {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(255, 99, 71, 0.8); /* Color semi-transparente */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
+}
+
+/* Estilo para el botón "ÚNETE AHORA" */
+.horario-btn {
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: center;
+  padding: 15px 55px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
   
+}
+
+.horario-btn:hover {
+  background-color: #ffffff; /* Color más oscuro al pasar el mouse */
+  color: black;
+}

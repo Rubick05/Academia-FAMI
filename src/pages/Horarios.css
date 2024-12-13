@@ -1,0 +1,130 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.horarios-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Title */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Content Layout */
+.horarios-content {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* Left Column */
+.horarios-select {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.horario-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+}
+
+.horario-button:hover {
+    background-color: #357ab7;
+}
+
+/* Right Column */
+.horarios-details {
+    flex: 1;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.details-container {
+    margin-top: 20px;
+}
+
+.details-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .horarios-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .horarios-select {
+        width: 100%;
+    }
+
+    .horarios-details {
+        margin-top: 20px;
+    }
+}

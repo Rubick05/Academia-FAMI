@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id          Int           @id @default(autoincrement())
+  correo      String        @unique
+  contrasenia String
+  nombre      String
+  rol         Rol
+  creadoEn    DateTime      @default(now())
+  clases      Inscripcion[] @relation("ClaseEstudiante") // Relación con Inscripción
+  clasesPrivadas ClasePrivada[] @relation("ClasesPrivadasEstudiante")
+  profesor    Profesor?     @relation("UsuarioProfesor")
+}
+
+model Profesor {
+  id          Int           @id @default(autoincrement())
+  usuarioId   Int           @unique
+  usuario     Usuario       @relation(fields: [usuarioId], references: [id], name: "UsuarioProfesor")
+  habilidades String
+  clases      Clase[]       @relation("ClasesProfesor")
+  clasesPrivadas ClasePrivada[] @relation("ClasesPrivadasProfesor")
+}
+
+model Clase {
+  id          Int           @id @default(autoincrement())
+  nombre      String
+  descripcion String
+  horario     String
+  profesorId  Int
+  cupoMaximo  Int           // Máximo de estudiantes
+  profesor    Profesor      @relation(fields: [profesorId], references: [id], name: "ClasesProfesor")
+  estudiantes Inscripcion[] @relation("ClaseEstudiante") // Relación inversa con Inscripción
+}
+
+model ClasePrivada {
+  id          Int        @id @default(autoincrement())
+  estudianteId Int
+  estudiante  Usuario    @relation(fields: [estudianteId], references: [id], name: "ClasesPrivadasEstudiante")
+  profesorId  Int
+  profesor    Profesor   @relation(fields: [profesorId], references: [id], name: "ClasesPrivadasProfesor")
+  fecha       DateTime
+}
+
+model Inscripcion {
+  id               Int         @id @default(autoincrement())
+  nombreEstudiante String
+  correoEstudiante String
+  contactoEstudiante String
+  claseId          Int
+  clase            Clase       @relation(fields: [claseId], references: [id], name: "ClaseEstudiantes")
+  fechaInscripcion DateTime    @default(now())
+  usuarioId        Int?
+  usuario          Usuario?   @relation("InscripcionUsuario", fields: [usuarioId], references: [id])
+}
+
+enum Rol {
+  ADMINISTRADOR
+  ESTUDIANTE
+}
